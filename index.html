@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 9</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <i class='bx bx-user' id="firsticon"></i>
+    <i class='bx bx-user' id="lasticon"></i>
+    <i class='bx bx-lock-alt' id="passicon"></i>
+    <i class='bx bx-envelope' id="mailicon" ></i>
+
+    <link rel="stylesheet" href="style.css"> 
+    <div class="border"></div>
+    <div class="container">
+        <div class="row">
+            <div class="instructions">
+                 <h1>Instructions</h1>
+                 <ul>
+                 <li id="first">First name must be string and less than or equal 10 characters.</p>
+                 <li id="last">Last name must be string and less than or equal 10 characters.</p>
+                 <li id="pass">Password must be numbers and less than or equal 20 characters.</p>
+                 <li id="mail">You must add valid email.</p>
+                 <li id="txt">About you must be string and greater than 30 characters and less than 200 characters.</p>
+                </ul>
+            </div>
+            <div class="form">
+                <input type="text" placeholder="First name" id="firstInput">
+                <h5 id="Firsth5">l</h5>
+               
+                <input type="text" placeholder="Last name" id="lastInput"><br>
+                <h5 id="lasth5">f</h5>
+                <input type="password" placeholder="Password" id="passInput"><br>
+                <h5 id="passh5">f</h5>
+               
+                <input type="text" placeholder="Email"  id="mailInput"><br>
+                <h5 id="mailh5">f</h5>
+                
+                <textarea cols="30" rows="10" placeholder="About you"  id="txtInput"></textarea><br>
+                <h5 id="txth5">f</h5>
+                <button id="save">save</button>
+            </div>
+        </div>
+    </div>
+    <script>
+         save.addEventListener("click",function(){
+            // first name
+            var val1 = firstInput.value;
+            var len1 = val1.length;
+           if (len1 >= 10){
+              firstInput.style.borderColor = "red"
+              first.style.color = "red"
+              document.getElementById("Firsth5").textContent = "First name must be less than 10 characters "
+              Firsth5.style.color = "red"
+              firstInput.style.borderColor = "red"
+              firstInput.style.animation ="shake 0.2s ease-in-out 0s 2";
+              firsticon.style.animation = "shake 0.2s ease-in-out 0s 2";
+           }
+           else if(len1==0){
+             document.getElementById("Firsth5").textContent = "Please fill out this field. "
+              Firsth5.style.color = "red"
+              firstInput.style.borderColor = "red"
+              firstInput.style.animation ="shake 0.2s ease-in-out 0s 2";
+              firsticon.style.animation = "shake 0.2s ease-in-out 0s 2";
+           }
+           else{
+              firstInput.style.borderColor = "rgb(167, 166, 166)"
+              first.style.color = "#E7E7E7"
+              Firsth5.style.color = "#1a293d"
+
+           }
+            //   last name
+            var val2 = lastInput.value;
+            var len2 = val2.length;
+           if (len2 >= 10){
+              lastInput.style.borderColor = "red"
+              last.style.color = "red"
+              document.getElementById("lasth5").textContent = "Last name must be less than 10 characters  "
+              lasth5.style.color = "red"
+              lastInput.style.borderColor = "red"
+              lastInput.style.animation ="shake 0.2s ease-in-out 0s 2";
+              lasticon.style.animation = "shake 0.2s ease-in-out 0s 2";
+           }
+           else if(len2==0){
+             document.getElementById("lasth5").textContent = "Please fill out this field. "
+              lasth5.style.color = "red"
+              lastInput.style.borderColor = "red"
+              lastInput.style.animation ="shake 0.2s ease-in-out 0s 2";
+              lasticon.style.animation = "shake 0.2s ease-in-out 0s 2";
+           }
+           else{
+              lastInput.style.borderColor = "rgb(167, 166, 166)"
+              last.style.color = "#E7E7E7"
+              lasth5.style.color = "#1a293d"
+           }
+        //    password
+            var val3 = passInput.value;
+            var len3 = val3.length;
+            var num = !isNaN(val3);
+            console.log(num)
+           if (num){
+                 if (len3 >= 20 ){
+                     passInput.style.borderColor = "red"
+                     pass.style.color = "red"
+                     document.getElementById("passh5").textContent = "Password must be less than 20 characters"
+                     passh5.style.color = "red"
+                     passInput.style.borderColor = "red"
+                     passInput.style.animation ="shake 0.2s ease-in-out 0s 2";
+                     passicon.style.animation = "shake 0.2s ease-in-out 0s 2";
+                }
+                 else if(len3==0){
+                     document.getElementById("passh5").textContent = "Please fill out this field. "
+                     passh5.style.color = "red"
+                     passInput.style.borderColor = "red"
+                     passInput.style.animation ="shake 0.2s ease-in-out 0s 2";
+                     passicon.style.animation = "shake 0.2s ease-in-out 0s 2";
+                }
+                 else{
+                     passInput.style.borderColor = "rgb(167, 166, 166)"
+                     pass.style.color = "#E7E7E7"
+                     passh5.style.color = "#1a293d"
+                }
+            }
+            else{
+                document.getElementById("passh5").textContent = "Password must contain numbers only"
+                passh5.style.color = "red"
+                passInput.style.borderColor = "red"
+                pass.style.color = "red"
+
+            }
+        //  email
+            var val4 = mailInput.value;
+            var len4 = val4.length;
+             if (len4>0 && !val4.includes(".com") && !val4.includes("@")){
+              mailInput.style.borderColor = "red"
+              mail.style.color = "red"
+              document.getElementById("mailh5").textContent = "Invalid email ( missing .com and @ ) "
+              mailh5.style.color = "red";
+              mailInput.style.borderColor = "red";
+              mailInput.style.animation ="shake 0.2s ease-in-out 0s 2";
+              mailicon.style.animation = "shake 0.2s ease-in-out 0s 2";
+           }
+           else if (len4>0 && !val4.includes("@")){
+              mailInput.style.borderColor = "red"
+              mail.style.color = "red";
+              document.getElementById("mailh5").textContent = "Invalid email ( missing @ ) "
+              mailh5.style.color = "red";
+              mailInput.style.borderColor = "red";
+              mailInput.style.animation ="shake 0.2s ease-in-out 0s 2";
+              mailicon.style.animation = "shake 0.2s ease-in-out 0s 2";
+           }
+           else if (len4>0 && !val4.includes(".com")){
+              mailInput.style.borderColor = "red"
+              mail.style.color = "red"
+              document.getElementById("mailh5").textContent = "Invalid email ( missing .com ) "
+              mailh5.style.color = "red"
+              mailInput.style.borderColor = "red"
+              mailInput.style.animation ="shake 0.2s ease-in-out 0s 2"
+              mailicon.style.animation = "shake 0.2s ease-in-out 0s 2"
+           }
+           else if(len4==0){
+              document.getElementById("mailh5").textContent = "Please fill out this field. "
+              mailh5.style.color = "red"
+              mailInput.style.borderColor = "red"
+              mailInput.style.animation ="shake 0.2s ease-in-out 0s 2"
+              mailicon.style.animation = "shake 0.2s ease-in-out 0s 2"
+
+           }
+           else{
+              mailInput.style.borderColor = "rgb(167, 166, 166)"
+              mail.style.color = "#E7E7E7"
+              mailh5.style.color = "#1a293d"
+           }
+        //    About you
+            var val5 = txtInput.value;
+            var len5 = val5.length;
+           if (len5>0 && (len5 <= 30 || len5 >= 200)){
+              txtInput.style.borderColor = "red"
+              txt.style.color = "red"
+              document.getElementById("txth5").textContent = "About you must be greater than 30 characters  "
+              txth5.style.color = "red"
+              txt.style.borderColor = "red"
+              txtInput.style.animation ="shake 0.2s ease-in-out 0s 2"
+           }
+           else if(len5==0){
+              document.getElementById("txth5").textContent = "Please fill out this field. "
+              txth5.style.color = "red"
+              txtInput.style.borderColor = "red"
+              txtInput.style.animation ="shake 0.2s ease-in-out 0s 2"
+           }
+           else{
+              txtInput.style.borderColor = "rgb(167, 166, 166)"
+              txt.style.color = "#E7E7E7"
+              txth5.style.color = "#1a293d"
+           }
+        })
+    </script>
+
+</body>
+</html>
